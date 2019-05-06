@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- font sizes -->
+    <dimen name="font_normal">14sp</dimen>
+    <dimen name="font_title">24sp</dimen>
+
+    <!-- spacing -->
+    <dimen name="spacing_default">8sp</dimen>
+    <dimen name="spacing_big">32sp</dimen>
+    <dimen name="spacing_buttons_overall">32sp</dimen>
+
+    <!-- view size -->
+    <dimen name="view_square_company_logo">50sp</dimen>
+</resources>

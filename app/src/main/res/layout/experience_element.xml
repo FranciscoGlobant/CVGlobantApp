@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="wrap_content">
+
+    <TextView
+            android:text="@string/single_word_placeholder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/tv_company_dates"
+            app:layout_constraintStart_toEndOf="@+id/tv_company_role" android:layout_marginLeft="@dimen/spacing_default"
+            android:layout_marginStart="@dimen/spacing_default"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_company_role"/>
+    <TextView
+            android:text="@string/single_word_placeholder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/tv_company_role"
+            app:layout_constraintStart_toEndOf="@+id/iv_company_logo"
+            android:layout_marginLeft="@dimen/spacing_default" android:layout_marginStart="@dimen/spacing_default"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_company_logo"/>
+    <TextView
+            android:text="@string/single_word_placeholder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/tv_company_name"
+            app:layout_constraintTop_toTopOf="@+id/iv_company_logo"
+            app:layout_constraintStart_toEndOf="@+id/iv_company_logo"
+            android:layout_marginLeft="@dimen/spacing_default" android:layout_marginStart="@dimen/spacing_default"/>
+    <ImageView
+            android:layout_width="@dimen/view_square_company_logo"
+            android:layout_height="@dimen/view_square_company_logo" app:srcCompat="@mipmap/ic_launcher_round"
+            android:id="@+id/iv_company_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="@dimen/spacing_default" android:layout_marginStart="@dimen/spacing_default"
+            android:layout_marginTop="@dimen/spacing_default"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="@dimen/spacing_default"
+            app:layout_constraintBottom_toBottomOf="parent" android:contentDescription="@string/company_logo"/>
+</androidx.constraintlayout.widget.ConstraintLayout>

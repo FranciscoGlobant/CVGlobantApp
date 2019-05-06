@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">CV-Globant-App</string>
+    <string name="next">Next</string>
+    <string name="experience">Experience</string>
+    <string name="responsabilities">Responsabilities</string>
+    <string name="from_to_date">From %1$s to %2$s</string>
+    <string name="name">Name</string>
+    <string name="area_of_expertise">Area of Expertise</string>
+    <string name="years_of_experience">Years of Experience</string>
+    <string name="summary_picture">summary picture</string>
+    <string name="single_word_placeholder">TextView</string>
+    <string name="knowledge">Knowledge</string>
+    <string name="company_logo">company logo</string>
+</resources>

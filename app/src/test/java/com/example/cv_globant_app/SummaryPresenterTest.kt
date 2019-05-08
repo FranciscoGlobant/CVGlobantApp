@@ -24,14 +24,14 @@ class SummaryPresenterTest {
     }
 
     @Test
-    fun getInfo_whenStateIsNull_getSummaryGetsCalled() {
-        summaryPresenter.getInfo(null)
+    fun getInfo_whenActivityIsFresh_getSummaryGetsCalled() {
+        summaryPresenter.getInfo(true)
         verify(mockedRepo).getSummary(any())
     }
 
     @Test
-    fun getInfo_whenStateIsNotNull_getSummaryDoesNotGetCalled() {
-        summaryPresenter.getInfo(Bundle())
+    fun getInfo_whenActivityIsRecreated_getSummaryDoesNotGetCalled() {
+        summaryPresenter.getInfo(false)
         verify(mockedRepo, never()).getSummary(any())
     }
 }

@@ -1,6 +1,5 @@
 package com.example.cv_globant_app
 
-import android.os.Bundle
 import com.example.cv_globant_app.common.GeneralContract
 import com.example.cv_globant_app.data.sources.GeneralDataSource
 import com.example.cv_globant_app.experience.ExperiencePresenter
@@ -24,14 +23,14 @@ class ExperiencePresenterTest {
     }
 
     @Test
-    fun getInfo_whenStateIsNull_getExperienceGetsCalled() {
-        summaryPresenter.getInfo(null)
+    fun getInfo_whenActivityIsFresh_getExperienceGetsCalled() {
+        summaryPresenter.getInfo(true)
         verify(mockedRepo).getExperience(any())
     }
 
     @Test
-    fun getInfo_whenStateIsNotNull_getExperienceDoesNotGetCalled() {
-        summaryPresenter.getInfo(Bundle())
+    fun getInfo_whenActivityIsRecreated_getExperienceDoesNotGetCalled() {
+        summaryPresenter.getInfo(false)
         verify(mockedRepo, never()).getExperience(any())
     }
 }

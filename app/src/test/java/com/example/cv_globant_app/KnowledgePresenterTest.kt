@@ -1,6 +1,5 @@
 package com.example.cv_globant_app
 
-import android.os.Bundle
 import com.example.cv_globant_app.common.GeneralContract
 import com.example.cv_globant_app.data.sources.GeneralDataSource
 import com.example.cv_globant_app.knowledge.KnowledgePresenter
@@ -24,14 +23,14 @@ class KnowledgePresenterTest {
     }
 
     @Test
-    fun getInfo_whenStateIsNull_getKnowledgeGetsCalled() {
-        summaryPresenter.getInfo(null)
+    fun getInfo_whenActivityIsFresh_getKnowledgeGetsCalled() {
+        summaryPresenter.getInfo(true)
         verify(mockedRepo).getKnowledge(any())
     }
 
     @Test
-    fun getInfo_whenStateIsNotNull_getKnowledgeDoesNotGetCalled() {
-        summaryPresenter.getInfo(Bundle())
+    fun getInfo_whenActivityIsRecreated_getKnowledgeDoesNotGetCalled() {
+        summaryPresenter.getInfo(false)
         verify(mockedRepo, never()).getKnowledge(any())
     }
 }

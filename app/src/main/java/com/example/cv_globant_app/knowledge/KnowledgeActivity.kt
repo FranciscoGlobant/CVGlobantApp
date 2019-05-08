@@ -2,6 +2,7 @@ package com.example.cv_globant_app.knowledge
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cv_globant_app.R
@@ -51,5 +52,10 @@ class KnowledgeActivity : AppCompatActivity(), GeneralContract.View {
             layoutManager = LinearLayoutManager(context)
             adapter = KnowledgeAdapter(knowledge)
         }
+    }
+
+    override fun notifyError(t: Throwable) {
+        Log.e("getInfo", "Knowledge call Failed")
+        throw t
     }
 }

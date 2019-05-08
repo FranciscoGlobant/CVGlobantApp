@@ -1,6 +1,7 @@
 package com.example.cv_globant_app.experience
 
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.cv_globant_app.R
@@ -40,5 +41,10 @@ class ExperienceActivity : AppCompatActivity(), GeneralContract.View {
             layoutManager = LinearLayoutManager(context)
             adapter = ExperienceAdapter(data)
         }
+    }
+
+    override fun notifyError(t: Throwable) {
+        Log.e("getInfo", "Experience call Failed")
+        throw t
     }
 }

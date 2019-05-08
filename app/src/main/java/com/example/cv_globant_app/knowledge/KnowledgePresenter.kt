@@ -1,6 +1,5 @@
 package com.example.cv_globant_app.knowledge
 
-import android.util.Log
 import com.example.cv_globant_app.common.GeneralContract
 import com.example.cv_globant_app.data.sources.GeneralDataSource
 
@@ -15,8 +14,7 @@ class KnowledgePresenter(private var mView: GeneralContract.View?, private val m
 
                 override fun onFailure(t: Throwable) {
                     // ¯\_(ツ)_/¯
-                    Log.e("getInfo", "Knowledge call Failed")
-                    throw t
+                    mView?.notifyError(t)
                 }
             })
         }

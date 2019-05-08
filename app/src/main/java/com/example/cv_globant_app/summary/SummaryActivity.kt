@@ -2,6 +2,7 @@ package com.example.cv_globant_app.summary
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.example.cv_globant_app.R
 import com.example.cv_globant_app.common.GeneralContract
@@ -46,5 +47,10 @@ class SummaryActivity : AppCompatActivity(), GeneralContract.View {
         tv_experience_summary.text = summary.experience.toString()
         tv_expertise_summary.text = summary.expertise
         Picasso.get().load(summary.picURL).fit().centerCrop().into(iv_summary)
+    }
+
+    override fun notifyError(t: Throwable) {
+        Log.e("getInfo", "Summary call Failed")
+        throw t
     }
 }

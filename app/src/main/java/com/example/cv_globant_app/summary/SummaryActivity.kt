@@ -18,13 +18,13 @@ class SummaryActivity : AppCompatActivity(), GeneralContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.summary_activity)
-        initPresenter(savedInstanceState)
+        initPresenter(savedInstanceState == null)
         setUpView()
     }
 
-    private fun initPresenter(savedInstanceState: Bundle?) {
+    private fun initPresenter(isActivityFirstCreated: Boolean) {
         mPresenter = SummaryPresenter(this, GeneralRepository())
-        mPresenter.getInfo(savedInstanceState)
+        mPresenter.getInfo(isActivityFirstCreated)
     }
 
     private fun setUpView() {

@@ -8,7 +8,7 @@ interface GeneralContract {
     }
 
     interface Presenter {
-        fun getInfo(isStateSaved: Bundle?)
+        fun getInfo(isActivityFirstCreated: Boolean)
         fun finalize()
     }
 }

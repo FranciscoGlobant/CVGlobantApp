@@ -1,15 +1,13 @@
 package com.example.cv_globant_app.knowledge
 
-import android.os.Bundle
 import android.util.Log
 import com.example.cv_globant_app.common.GeneralContract
-import com.example.cv_globant_app.data.GeneralRepository
 import com.example.cv_globant_app.data.sources.GeneralDataSource
 
 class KnowledgePresenter(private var mView: GeneralContract.View?, private val mRepo: GeneralDataSource) :
     GeneralContract.Presenter {
-    override fun getInfo(isStateSaved: Bundle?) {
-        if (isStateSaved == null) {
+    override fun getInfo(isActivityFirstCreated: Boolean) {
+        if (isActivityFirstCreated) {
             mRepo.getKnowledge(object : GeneralDataSource.GeneralLoadCallback {
                 override fun <T> onSuccess(info: T) {
                     mView?.paintInfo(info)

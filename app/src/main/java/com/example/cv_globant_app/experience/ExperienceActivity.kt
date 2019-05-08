@@ -17,12 +17,12 @@ class ExperienceActivity : AppCompatActivity(), GeneralContract.View {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.experience_activity)
-        initPresenter(savedInstanceState)
+        initPresenter(savedInstanceState == null)
     }
 
-    private fun initPresenter(savedInstanceState: Bundle?) {
+    private fun initPresenter(isActivityFirstCreated: Boolean) {
         mPresenter = ExperiencePresenter(this, GeneralRepository())
-        mPresenter.getInfo(savedInstanceState)
+        mPresenter.getInfo(isActivityFirstCreated)
     }
 
     override fun onDestroy() {

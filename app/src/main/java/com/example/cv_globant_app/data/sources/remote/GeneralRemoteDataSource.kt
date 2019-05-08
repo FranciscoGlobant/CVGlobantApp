@@ -11,20 +11,11 @@ import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-class GeneralRemoteDataSource : GeneralDataSource {
-
-    companion object {
-
-        private const val ENDPOINT = "https://gist.githubusercontent.com/FranciscoGlobant/"
-        private val instance = GeneralRemoteDataSource()
-
-        fun getInstance(): GeneralRemoteDataSource {
-            return instance
-        }
-    }
+object GeneralRemoteDataSource : GeneralDataSource {
 
     private val httpClient = OkHttpClient()
     private val service: GeneralDataSource.CVServices
+    private const val ENDPOINT = "https://gist.githubusercontent.com/FranciscoGlobant/"
 
     init {
         val retrofit = createAdapter().build()
@@ -33,7 +24,6 @@ class GeneralRemoteDataSource : GeneralDataSource {
     }
 
     private fun createAdapter(): Retrofit.Builder {
-
         return Retrofit.Builder()
             .baseUrl(ENDPOINT)
             .addConverterFactory(GsonConverterFactory.create())
